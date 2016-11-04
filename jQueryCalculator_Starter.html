@@ -87,6 +87,7 @@ var firstNumber = 0;
 var secondNumber = 0;
 var operator;
 var answer = 0;
+var userFirstclick = false;
    
 
     //addition
@@ -135,10 +136,33 @@ var answer = 0;
     //clear();
 
 //CAPTURE USER BUTTON CLICKS (on.click operator/use button's existing value)
-    //first number
+//Determins if user has clicked or not
+$(".number").click(function(){
+    if (userFirstclick === false){
+        //first number
+        firstNumber = $(this).val();
+        userFirstclick = true;
+        console.log(firstNumber);
+        console.log("you clicked a number");
+    } else {
+        //second number
+        secondNumber = $(this).val();
+        userFirstclick = true;
+        console.log(secondNumber);
+        console.log("you clicked a second number");
+        };
+})
+
+
+
+
+
+    
     //operator
-    //second number
+    
     //equal
+
+    
 
 //the buttons clicked will be fed into the applicable function
 //!console log along the way to see if things are working
