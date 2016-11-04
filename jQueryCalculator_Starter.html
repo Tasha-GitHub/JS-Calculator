@@ -80,14 +80,35 @@
 
 $(document).ready(function(){
 
+
 //FUNCTIONS FOR
     //addition
     //subtraction
     //multiplication
     //division
+
+    function division(x,y){
+        answer = x/y;
+        console.log(answer);
+    }
+    division(4,2);
     //exponential
+    function exponential(x,y){
+        answer = Math.pow(x,y);
+        console.log(answer);
+    }
+    exponential(3,3);
+
     //equal
+    function equal(){
+    $("#result").html(answer)};
     //clear
+
+    equal()
+
+    // function clear(){
+    // $("#result").emtpy()};
+    // clear();
 
 //CAPTURE USER BUTTON CLICKS (on.click function/use button's existing value)
     //first number
