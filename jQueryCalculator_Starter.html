@@ -86,6 +86,7 @@ var firstNumber = 0;
 var secondNumber = 0;
 var operator;
 var answer = 0;
+var chosenoperator;
    
     //addition
     function addition(x,y) {
@@ -134,9 +135,42 @@ var answer = 0;
     //clear();
 
 //CAPTURE USER BUTTON CLICKS (on.click operator/use button's existing value)
+
     //first number
+
     //operator
+    $(".operator").click(function() {
+        console.log("buttonclicked");
+        var operatorclick = $(this).val();
+        console.log(operatorclick);
+       //("#target").click();
+       if (operatorclick == "plus") {
+            addition(1,2);
+            chosenoperator = "plus";
+       }
+       else if (operatorclick == "minus") {
+            subtract(1,2);
+            chosenoperator = "minus";
+       }
+       else if (operatorclick == "divide") {
+            division(1,2);
+            chosenoperator = "divide";
+       }
+       else if (operatorclick == "times") {
+            multiply(1,2);
+            chosenoperator = "times";
+       }
+       else  {
+            exponential(1,2);
+            chosenoperator = "power";
+       }
+
+    });
+
+
+
     //second number
+
     //equal
 
     //clear 
