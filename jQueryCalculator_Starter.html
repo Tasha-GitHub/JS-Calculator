@@ -83,56 +83,60 @@ $(document).ready(function(){
 
 
 //FUNCTIONS FOR (let's use x, y, and answer as our variables)
+var firstNumber = 0;
+var secondNumber = 0;
+var operator;
 var answer = 0;
    
 
     //addition
-function addition(x,y) {
-answer = x + y;
-console.log(answer);
-}
+    function addition(x,y) {
+    answer = x + y;
+    console.log(answer);
+    }
+    //addition(4,4);
 
     //subtraction
     function subtract(x,y) {
         answer = x - y;
         console.log(answer);
     }
+    //subtract(4,3);
 
     //multiplication
-
     function multiply (x,y) {
         answer = x * y;
         console.log(answer);
     }   
-    multiply (7,1)
-    //division
+    //multiply (7,1)
 
+    //division
     function division(x,y){
         answer = x/y;
         console.log(answer);
     }
-    division(4,2);
+    //division(4,2);
+
     //exponential
     function exponential(x,y){
         answer = Math.pow(x,y);
         console.log(answer);
     }
-    exponential(3,3);
+    //exponential(3,3);
 
     //equal
     function equal(){
     $("#result").html(answer)};
+    //equal()
+
     //clear
+    function clear(){
+    $("#result").empty()};
+    //clear();
 
-    equal()
-
-    // function clear(){
-    // $("#result").emtpy()};
-    // clear();
-
-//CAPTURE USER BUTTON CLICKS (on.click function/use button's existing value)
+//CAPTURE USER BUTTON CLICKS (on.click operator/use button's existing value)
     //first number
-    //function
+    //operator
     //second number
     //equal
 
