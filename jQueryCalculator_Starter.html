@@ -79,10 +79,25 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
+
+
+
+//FUNCTIONS FOR (let's use x, y, and answer as our variables)
 var answer = 0;
-//FUNCTIONS FOR
+   
+
     //addition
+function addition(x,y) {
+answer = x + y;
+console.log(answer);
+}
+
     //subtraction
+    function subtract(x,y) {
+        answer = x - y;
+        console.log(answer);
+    }
+
     //multiplication
 
     function multiply (x,y) {
@@ -91,9 +106,29 @@ var answer = 0;
     }   
     multiply (7,1)
     //division
+
+    function division(x,y){
+        answer = x/y;
+        console.log(answer);
+    }
+    division(4,2);
     //exponential
+    function exponential(x,y){
+        answer = Math.pow(x,y);
+        console.log(answer);
+    }
+    exponential(3,3);
+
     //equal
+    function equal(){
+    $("#result").html(answer)};
     //clear
+
+    equal()
+
+    // function clear(){
+    // $("#result").emtpy()};
+    // clear();
 
 //CAPTURE USER BUTTON CLICKS (on.click function/use button's existing value)
     //first number
