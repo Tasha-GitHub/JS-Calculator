@@ -65,9 +65,9 @@
                     <h3 class="panel-title">Result</h3>
                 </div>
                 <div class="panel-body">
-                    <h1 id="firstNumber"></h1>
+                    <h1 id="first"></h1>
                     <h1 id="operator"></h1>
-                    <h1 id="secondNumber"></h1>
+                    <h1 id="second"></h1>
                     <hr>
                     <h1 id="result"></h1> 
                 </div>
@@ -94,35 +94,40 @@ var chosenoperator;
     function addition(x,y) {
     answer = x + y;
     console.log(answer);
+    return;
     }
     //addition(4,4);
 
     //subtraction
     function subtract(x,y) {
-        answer = x - y;
-        console.log(answer);
+    answer = x - y;
+    console.log(answer);
+    return;
     }
     //subtract(4,3);
 
     //multiplication
 
     function multiply (x,y) {
-        answer = x * y;
-        console.log(answer);
+    answer = x * y;
+    console.log(answer);
+    return;
     }   
     //multiply (7,1)
 
     //division
     function division(x,y){
-        answer = x/y;
-        console.log(answer);
+    answer = x / y;
+    console.log(answer);
+    return;
     }
     //division(4,2);
 
     //exponential
     function exponential(x,y){
-        answer = Math.pow(x,y);
-        console.log(answer);
+    answer = Math.pow(x,y);
+    console.log(answer);
+    return;
     }
     //exponential(3,3);
 
@@ -133,7 +138,14 @@ var chosenoperator;
 
     //clear
     function clear(){
-    $("#result").empty()};
+    firstNumber = 0;
+    secondNumber = 0;
+    answer = 0;
+    userFirstclick = false;
+    $("#operator").empty();
+    $("#first").empty();
+    $("#second").empty();
+    $("#result").empty();}
     //clear();
 
 //CAPTURE USER BUTTON CLICKS (on.click operator/use button's existing value)
@@ -142,16 +154,16 @@ var chosenoperator;
 $(".number").click(function(){
     if (userFirstclick === false){
         //first number
-        firstNumber = $(this).val();
+        firstNumber = parseInt($(this).val());
         userFirstclick = true;
-        console.log(firstNumber);
-        console.log("you clicked a number");
+        $("#first").html(firstNumber);
+        console.log("you have clicked your first number, " + firstNumber);
     } else {
         //second number
-        secondNumber = $(this).val();
+        secondNumber = parseInt($(this).val());
         userFirstclick = true;
-        console.log(secondNumber);
-        console.log("you clicked a second number");
+        $("#second").html(secondNumber);
+        console.log("you clicked your second number, " + secondNumber);
         };
 })
 
@@ -164,23 +176,22 @@ $(".number").click(function(){
         console.log(operatorclick);
        //("#target").click();
        if (operatorclick == "plus") {
-            addition(1,2);
+            $("#operator").html("+");
             chosenoperator = "plus";
        }
        else if (operatorclick == "minus") {
-            subtract(1,2);
+            $("#operator").html("-");
             chosenoperator = "minus";
        }
        else if (operatorclick == "divide") {
-            division(1,2);
+            $("#operator").html("/");
             chosenoperator = "divide";
        }
        else if (operatorclick == "times") {
-            multiply(1,2);
+            $("#operator").html("x");
             chosenoperator = "times";
        }
        else  {
-            exponential(1,2);
             chosenoperator = "power";
        }
 
@@ -190,11 +201,7 @@ $(".number").click(function(){
 
     //second number
 
-    //equal
-    $("#buttonEqual").click(function() {
-        console.log("equal button clicked");
-        equal();
-    });
+
 
 // LOOP NEEDS TO
 // when first number is clicked, we need to capture that value
@@ -203,6 +210,28 @@ $(".number").click(function(){
 // if a firstNumber button is clicked, and an operator button is clicked, and a secondNumber button is clicked, run that operator function
 // when the equal button is pressed, the answer will print in the result div
 
+
+
+    //equal
+    $("#buttonEqual").click(function() {
+        if (chosenoperator === "plus") {
+            addition(firstNumber,secondNumber);
+            console.log("the answer is " + answer);
+        } else if (chosenoperator === "minus") {
+            subtract(firstNumber,secondNumber);
+            console.log("the answer is " + answer);
+        } else if (chosenoperator === "divide") {
+            division(firstNumber,secondNumber);
+            console.log("the answer is " + answer);
+        } else if (chosenoperator === "times") {
+            multiply(firstNumber,secondNumber);
+            console.log("the answer is " + answer);
+        } else {
+            exponential(firstNumber,secondNumber);
+            console.log("the answer is " + answer);
+        }
+        equal();
+    });
 
 
 // IN GENERAL
